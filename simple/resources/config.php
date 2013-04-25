@@ -1,11 +1,11 @@
 <?php
 
 $config['db_host'] = 'localhost';
-$comfig['db_user'] = 'username';
+$config['db_user'] = 'root';
 $config['db_pass'] = '';
 $config['db_name'] = 'blog'; 
 
-foreach ($comfig as $key => $value) {
-    define(Stringtoupper($key), $value);
+foreach ( $config as $k => $v ) {
+    define(strtoupper($k), $v);
 }
 ?>
