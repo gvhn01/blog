@@ -7,7 +7,7 @@ if( isset($_POST['name'])){
 
     if(empty($name)){
         $error ='You must select a category name';
-    }else if(category_exists($name)){
+    }else if(category_exists('name', $name)){
         $error = 'That category already exist.';
     }else if(strlen($name) > 24){
         $error = 'Category names can only be up to 24 characters';
