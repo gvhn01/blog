@@ -15,6 +15,9 @@ if( isset($_POST['name'])){
     
     if ( ! isset($error)){
         add_category($name);
+        
+        header('Location: add_post.php');
+        die();
     }
 }//end if isset
 
@@ -24,7 +27,7 @@ if( isset($_POST['name'])){
     <head> 
         <meta charset ="utf-8">
         <meta http-equiv ="X-UA-compatible" content="IE=edge,chrome=1"
-        <title>Add a category</title>        
+        <title></title>        
     </head>
     
     <body>

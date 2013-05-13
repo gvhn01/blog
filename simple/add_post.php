@@ -72,7 +72,9 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category'])){
                                            <?php echo $category['name']; ?>                            
                             </option>
                             <?php
+                            
                         }
+                        header('Location: index.php');
                     ?>
                     
                 </select>            
