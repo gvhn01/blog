@@ -24,13 +24,26 @@ if( isset($_POST['name'])){
 ?>
 <!DOCTYPE html> 
 <html lang ="en">
-    <head> 
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
         <meta charset ="utf-8">
-        <meta http-equiv ="X-UA-compatible" content="IE=edge,chrome=1"
-        <title></title>        
+        <meta http-equiv ="X-UA-compatible" content="IE=edge,chrome=1">
+        <title>Add category</title>        
     </head>
     
     <body>
+        <div id="wrapper">
+        <div id="navbar">
+        <nav> 
+            <ul>
+                <li><a href="index.php"> Index </a>-</li>
+                <li><a href="add_post.php"> Add a Post </a>-</li>
+                <li><a href="add_category.php"> Add a category </a>-</li>
+                <li><a href="category_list.php"> Category list</a></li>
+            </ul>
+        </nav>
+    </div><!--end navbar-->
+    <div id="content">
         <h1>Add category</h1>
 
         <?php 
@@ -50,5 +63,7 @@ if( isset($_POST['name'])){
                 <input type ="submit" value="Add category">
             </div>
         </form>
+    </div><!--end content-->
+    </div><!--end wrapper-->
     </body>
     </html>

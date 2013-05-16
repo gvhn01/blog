@@ -7,7 +7,7 @@ $posts = get_posts(null, $_GET['id']);
 <html>
     <head>
         <title>My blog</title>
-      
+        <link rel="stylesheet" type="text/css" href="css/style.css"> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style> 
             ul {list-style-type:none}
@@ -17,16 +17,22 @@ $posts = get_posts(null, $_GET['id']);
         </style>
     </head>
     <body>
+        <div id="wrapper">
+            <div id="navbar">
         <nav> 
             <ul>
                 <li><a href="index.php"> Index </a></li>
-                <li><a href="add_post.php"> Add a Post</a></li>
-                <li><a href="add_category.php"> Add a category</a></li>
-                <li><a href="category_list.php"> Category list</a></li>
+                <li><a href="add_post.php">Add a Post </a></li>
+                <li><a href="add_category.php">Add a category </a></li>
+                <li><a href="category_list.php">Category list </a></li>
             </ul>
         </nav>
-        
-        <h1> Muffzter's Awesome Blog <h1> 
+    </div><!--end navbar-->
+
+        <div id="content"> 
+        <h1> Muffzter's Awesome Blog </h1>
+
+        <div id="posts">
                 
         <?php 
         foreach ( $posts as $post ){
@@ -38,8 +44,10 @@ $posts = get_posts(null, $_GET['id']);
             <p> Posted on <?php echo date('d-m-Y h:i:s', strtotime($post['date_posted'])); ?>
                 in <a href="category.php?id=<?php echo $post['category_id']; ?>"><?php echo $post['name'];?></a>
             </p>
-            <div>
+            <div id="text">
+                <p>
                 <?php echo nl2br($post['contents']); ?>
+            </p>
             </div>
             
             <menu>
@@ -52,7 +60,12 @@ $posts = get_posts(null, $_GET['id']);
             <?php
             
         }
-        ?>        
+        ?>
+        <div id="footer">
+    </div><!--end footer-->
+    </div><!--end posts-->
+    </div><!--end content-->
+    </div><!--end wrapper-->        
     </body>
 </html>
 

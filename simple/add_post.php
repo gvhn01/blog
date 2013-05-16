@@ -43,12 +43,25 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category'])){
             echo '<ul><li>', implode('</li><li>', $errors), '</li></ul>';
         }
         ?>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style> 
         label { display : block;}
         </style>
     </head>
     <body>
+        <div id="wrapper">        
+        <div id="navbar">
+        <nav> 
+            <ul>
+                <li><a href="index.php"> Index </a>-</li>
+                <li><a href="add_post.php"> Add a Post </a>-</li>
+                <li><a href="add_category.php"> Add a category </a>-</li>
+                <li><a href="category_list.php"> Category list</a></li>
+            </ul>
+        </nav>
+    </div><!--end navbar-->
+    <div id="content">
         <h1>Add a Post</h1> 
         <form action="" method="post"> 
             <div>
@@ -74,7 +87,7 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category'])){
                             <?php
                             
                         }
-                        header('Location: index.php');
+
                     ?>
                     
                 </select>            
@@ -83,6 +96,7 @@ if ( isset($_POST['title'], $_POST['contents'], $_POST['category'])){
                 <input type="submit" value="Add Post">
             </div>
         </form>
-        
+    </div><!--end content-->
+        </div><!--wrapper-->
     </body>
 </html>
